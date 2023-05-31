@@ -36,4 +36,8 @@ extension UIColor {
     static let textSecondary = UIColor.gray
     static let textOnPrimary = UIColor.white
     static let textOnSecondary = UIColor.black
+    
+    //Renat
+    static let NFTBlack = UIColor(named: "NFTBlack") ?? UIColor.black
+    static let NFTLinkBlue = UIColor(named: "NFTLinkBlue") ?? UIColor.blue
 }
