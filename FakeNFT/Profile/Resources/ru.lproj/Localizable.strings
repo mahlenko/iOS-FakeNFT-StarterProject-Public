@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  FakeNFT
+
+  Created by Юрий Демиденко on 25.05.2023.
+  
+*/
+
+myNFTs = "Мои NFT (%d)";
+favoritesNFTs = "Избранные NFT (%d)";
+aboutDeveloper = "О разработчике";
+changePhoto = "Сменить\nфото";
+name = "Имя";
+description = "Описание";
+website = "Сайт";
+uploadImage = "Загрузить изображение";
+fromAuthor = "от ";
+priceTitle = "Цена";
+favoritesNFT = "Избранные NFT";
