@@ -26,7 +26,7 @@ final class ProfileViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        label.textColor = .textColorBlack
+        label.textColor = .asset(.black)
         return label
     }()
 
@@ -34,7 +34,7 @@ final class ProfileViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 13)
-        label.textColor = .textColorBlack
+        label.textColor = .asset(.black)
         label.numberOfLines = 0
         return label
     }()
@@ -42,9 +42,9 @@ final class ProfileViewController: UIViewController {
     private lazy var websiteButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitleColor(.textColorBlue, for: .normal)
+        button.setTitleColor(.asset(.blue), for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        button.setTitleColor(.textColorBlue.withAlphaComponent(0.5), for: .highlighted)
+        button.setTitleColor(.asset(.blue).withAlphaComponent(0.5), for: .highlighted)
         button.addTarget(self, action: #selector(websiteButtonAction), for: .touchUpInside)
         return button
     }()
@@ -57,6 +57,7 @@ final class ProfileViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.accessibilityIdentifier = "profileTable"
+        tableView.backgroundColor = .asset(.white)
         return tableView
     }()
 
@@ -75,12 +76,11 @@ final class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .viewBackgroundColor
+        view.backgroundColor = .asset(.white)
         errorAlertPresenter.viewController = self
         setupNavigationController()
         setupConstraints()
         bind()
-        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -170,7 +170,7 @@ final class ProfileViewController: UIViewController {
                                           action: #selector(editProfileButtonAction))
         navigationItem.rightBarButtonItem = rightButton
         navigationItem.backButtonTitle = ""
-        navigationController?.navigationBar.tintColor = .textColorBlack
+        navigationController?.navigationBar.tintColor = .asset(.black)
     }
 
     @objc private func websiteButtonAction() {

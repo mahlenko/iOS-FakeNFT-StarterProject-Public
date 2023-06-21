@@ -30,7 +30,7 @@ final class EditProfileViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         let imageConfig = UIImage.SymbolConfiguration(pointSize: 17, weight: .semibold)
         let buttonImage = UIImage(systemName: "xmark", withConfiguration: imageConfig)
-        button.setImage(buttonImage?.withTintColor(.textColorBlack, renderingMode: .alwaysOriginal), for: .normal)
+        button.setImage(buttonImage?.withTintColor(.asset(.black), renderingMode: .alwaysOriginal), for: .normal)
         button.addTarget(self, action: #selector(submitChanges), for: .touchUpInside)
         return button
     }()
@@ -40,7 +40,7 @@ final class EditProfileViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 35
         button.layer.masksToBounds = true
-        let processor = OverlayImageProcessor(overlay: .textColorBlack, fraction: 0.6)
+        let processor = OverlayImageProcessor(overlay: .asset(.black), fraction: 0.6)
         button.kf.setBackgroundImage(with: profileViewModel.mainAvatarURLObservable.wrappedValue,
                                      for: .normal,
                                      placeholder: UIImage(named: Constants.avatarPlaceholder),
@@ -62,7 +62,7 @@ final class EditProfileViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(L10n.loadNewAvatarButtonTitle, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        button.setTitleColor(.textColorBlack, for: .normal)
+        button.setTitleColor(.asset(.black), for: .normal)
         button.titleLabel?.textAlignment = .center
         button.isUserInteractionEnabled = false
         button.alpha = 0.0
@@ -180,7 +180,7 @@ final class EditProfileViewController: UIViewController {
     }
 
     private func setupController() {
-        view.backgroundColor = .viewBackgroundColor
+        view.backgroundColor = .asset(.white)
         presentationController?.delegate = self
     }
 
@@ -218,7 +218,7 @@ final class EditProfileViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
         label.font = UIFont.systemFont(ofSize: 22, weight: .bold)
-        label.textColor = .textColorBlack
+        label.textColor = .asset(.black)
         return label
     }
 
@@ -227,8 +227,8 @@ final class EditProfileViewController: UIViewController {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.text = text
         textField.font = UIFont.systemFont(ofSize: 17)
-        textField.textColor = .textColorBlack
-        textField.backgroundColor = .lightGreyBackground
+        textField.textColor = .asset(.black)
+        textField.backgroundColor = .asset(.lightGray)
         textField.layer.cornerRadius = 12
         textField.layer.masksToBounds = true
         textField.clearButtonMode = .whileEditing
@@ -244,8 +244,8 @@ final class EditProfileViewController: UIViewController {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.text = text
         textView.font = UIFont.systemFont(ofSize: 17)
-        textView.textColor = .textColorBlack
-        textView.backgroundColor = .lightGreyBackground
+        textView.textColor = .asset(.black)
+        textView.backgroundColor = .asset(.lightGray)
         textView.isScrollEnabled = false
         textView.layer.cornerRadius = 12
         textView.layer.masksToBounds = true

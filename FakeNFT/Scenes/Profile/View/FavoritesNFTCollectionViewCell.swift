@@ -42,7 +42,7 @@ final class FavoritesNFTCollectionViewCell: UICollectionViewCell, ReuseIdentifyi
 
     private lazy var likeButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 54, y: 6, width: 21, height: 18))
-        button.setImage(heartImage?.withTintColor(.redHeartColor, renderingMode: .alwaysOriginal), for: .normal)
+        button.setImage(heartImage?.withTintColor(.asset(.red), renderingMode: .alwaysOriginal), for: .normal)
         button.contentMode = .center
         button.addTarget(self, action: #selector(likeButtonAction), for: .touchUpInside)
         button.accessibilityIdentifier = "like"
@@ -55,7 +55,7 @@ final class FavoritesNFTCollectionViewCell: UICollectionViewCell, ReuseIdentifyi
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
-        label.textColor = .textColorBlack
+        label.textColor = .asset(.black)
         return label
     }()
     
@@ -65,7 +65,7 @@ final class FavoritesNFTCollectionViewCell: UICollectionViewCell, ReuseIdentifyi
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 15)
-        label.textColor = .textColorBlack
+        label.textColor = .asset(.black)
         return label
     }()
 
@@ -81,7 +81,7 @@ final class FavoritesNFTCollectionViewCell: UICollectionViewCell, ReuseIdentifyi
     override func prepareForReuse() {
         super.prepareForReuse()
         nftImageView.kf.cancelDownloadTask()
-        likeButton.setImage(heartImage?.withTintColor(.redHeartColor, renderingMode: .alwaysOriginal), for: .normal)
+        likeButton.setImage(heartImage?.withTintColor(.asset(.red), renderingMode: .alwaysOriginal), for: .normal)
     }
 
     @objc private func likeButtonAction() {
