@@ -6,7 +6,7 @@
 import UIKit
 import Kingfisher
 
-final class MyNFTTableViewCell: UITableViewCell, ReuseIdentifying, RatingStringMaker {
+final class MyNFTTableViewCell: UITableViewCell, ReuseIdentifying {
 
     private lazy var cellStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [nftImageView, nftDataStackView, nftPriceStackView])

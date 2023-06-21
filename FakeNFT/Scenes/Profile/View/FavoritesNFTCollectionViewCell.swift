@@ -5,7 +5,7 @@
 
 import UIKit
 
-final class FavoritesNFTCollectionViewCell: UICollectionViewCell, ReuseIdentifying, RatingStringMaker {
+final class FavoritesNFTCollectionViewCell: UICollectionViewCell, ReuseIdentifying {
 
     weak var delegate: FavoritesNFTCellDelegate?
 
