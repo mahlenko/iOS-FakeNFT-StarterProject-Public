@@ -123,5 +123,6 @@ final class MyNFTTableViewCell: UITableViewCell, ReuseIdentifying, RatingStringM
         nftRatingView.set(length: nftViewModel.rating)
         nftAuthorLabel.attributedText = makeAttributedAuthorString(from: nftViewModel.author)
         nftPriceValueLabel.text = nftViewModel.price
+        backgroundColor = .asset(.white)
     }
 }

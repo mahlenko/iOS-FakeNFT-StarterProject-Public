@@ -87,7 +87,7 @@ final class MyNFTViewController: UIViewController {
     }
 
     private func setupNavigationController() {
-        let rightButton = UIBarButtonItem(image: UIImage(named: "SortButton"),
+        let rightButton = UIBarButtonItem(image: .asset(.sort),
                                           style: .plain,
                                           target: self,
                                           action: #selector(sortMyNFTAction))
