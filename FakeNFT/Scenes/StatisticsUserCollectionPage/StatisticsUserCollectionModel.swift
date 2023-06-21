@@ -13,6 +13,8 @@ final class StatisticsUserCollectionModel {
 
             let request = Request(endpoint: URL(string: Config.baseUrl + "/nft" + "/\(id)"), httpMethod: .get)
             defaultNetworkClient.send(request: request, type: Nft.self) { [weak self] result in
+                guard let self = self else { return }
+                
                 switch result {
                 case .success(let nft):
                     resultNfts.append(nft)
@@ -23,9 +25,7 @@ final class StatisticsUserCollectionModel {
             }
         }
 
-        dispatchGroup.notify(queue: .main) { [weak self] in
-            guard let self = self else { return }
-
+        dispatchGroup.notify(queue: .main) {
             if let error = savedError {
                 completion(.failure(error))
             } else {
